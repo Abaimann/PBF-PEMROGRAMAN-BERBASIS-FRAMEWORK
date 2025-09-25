@@ -12,11 +12,17 @@ class ProductController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    public function index($number){
-        $result = $number + 7;
+    // public function index($number){
+    //     $result = $number + 7;
 
-        return view('layouts.index', compact('number', 'result'));
+    //     return view('layouts.index', compact('number', 'result'));
+    // }
+
+    public function index(){
+        $nama = 'Mahasiswa Unsika';
+        return view('product',['nama' => $nama, 'alertMessage' => 'Selamat Belajar Blade', 'alertType' => 'aw aw aw']);
     }
+
 
     public function percobaan(
     )
@@ -53,7 +59,9 @@ class ProductController extends Controller
      */
     public function show($id)
     {
-        //
+        return view('barang',[
+            'isi_data' => $id
+        ]);
     }
 
     /**

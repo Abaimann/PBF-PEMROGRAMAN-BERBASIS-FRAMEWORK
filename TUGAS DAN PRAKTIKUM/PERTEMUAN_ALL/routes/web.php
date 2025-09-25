@@ -50,4 +50,7 @@ route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified', 'RoleCheck:admin'])->name('dashboard');
 
+route::get('/route_count/{id}',[ProductController::class, 'show']);
+route::get('/product',[ProductController::class, 'index']);
+
 require __DIR__.'/auth.php';
