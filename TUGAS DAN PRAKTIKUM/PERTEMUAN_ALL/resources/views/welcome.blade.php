@@ -306,8 +306,8 @@
             <h1>Masa Depan Digital Dimulai Dari Sini</h1>
             <p>Bergabunglah dengan revolusi teknologi yang mengubah cara kita bekerja, berkreasi, dan terhubung dengan dunia.</p>
             <div class="cta-buttons">
-                <a class="btn btn-primary" href="{{ route(name: 'about.page') }}">about us</a>
-                <a class="btn btn-secondary" href="{{ route(name: 'contact.page') }}">contact</a>
+                <a class="btn btn-primary" href="{{ route('about.page') }}">about us</a>
+                <a class="btn btn-secondary" href="{{ route('contact.page') }}">contact</a>
             </div>
         </div>
     </section>

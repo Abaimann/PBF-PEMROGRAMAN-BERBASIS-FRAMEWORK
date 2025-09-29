@@ -17,7 +17,32 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
+})->name('welcome.page');
+
+Route::get('/welcome', function () {
+    return view('welcome');
+})->name('welcome.page');
+
+Route::get('/about', function () {
+    return view('about');
+})->name('about.page');
+
+Route::get('/contact', function () {
+    return view('contact');
+})->name('contact.page');
+
+Route::prefix('manage')->group(function () {
+    Route::get('/produk', function () {
+        return view('manage.produk');
+    })->name('produk.page');
+
+    Route::get('/lokasi', function () {
+        return view('manage.lokasi');
+    })->name('lokasi.page');
 });
+
+
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -52,5 +77,14 @@ route::get('/dashboard', function () {
 
 route::get('/route_count/{id}',[ProductController::class, 'show']);
 route::get('/product',[ProductController::class, 'index']);
+
+
+
+
+
+
+// uts
+
+Route::get('/uts', [UtsController::class, 'index']);
 
 require __DIR__.'/auth.php';
