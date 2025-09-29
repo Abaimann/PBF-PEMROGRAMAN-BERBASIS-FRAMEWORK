@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\UtsController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -84,7 +85,12 @@ route::get('/product',[ProductController::class, 'index']);
 
 
 // uts
+Route::prefix('uts')->name('uts.')->group(function () {
+    Route::get('/', [UtsController::class, 'index'])->name('index');  
+    Route::get('/pemrograman', [UtsController::class, 'pemrograman'])->name('pemrograman');
+    Route::get('/database', [UtsController::class, 'database'])->name('database');
+});
 
-Route::get('/uts', [UtsController::class, 'index']);
+
 
 require __DIR__.'/auth.php';
